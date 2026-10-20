@@ -93,4 +93,15 @@ def test_calcular_estadisticas_todos_aprobados():
     assert resultado["aprobados"] == 3
     assert resultado["reprobados"] == 0
     assert resultado["nota_maxima"] == 5.0
-    assert
+    assert resultado["nota_minima"] == 3.8
+
+def test_calcular_estadisticas_todos_reprobados():
+    notas = [1.0, 2.5, 2.8]
+    resultado = calcular_estadisticas_notas(notas)
+    
+    assert resultado["total"] == 3
+    assert resultado["promedio"] == 2.1
+    assert resultado["aprobados"] == 0
+    assert resultado["reprobados"] == 3
+    assert resultado["nota_maxima"] == 2.8
+    assert resultado["nota_minima"] == 1.0
